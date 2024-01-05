@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+</head>
+<body>
+    <div id="cursor" data-posx="0" data-posy="0" class="dot"></div>
+    <main class="app">
+        <nav id="navbar">
+            <div class="logo">
+                <img src="assets/icons/logo.svg" style="width:40px;" alt="logo">
+            </div>
+            <ul>
+                <li class="navlink">
+                    <a href="#">About</a>
+                </li>
+                <li class="navlink">
+                    <a href="#">Collection</a>
+                </li>
+                <li class="navlink">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main">
+            <!--  -->
+            <div class="image-container">
+                <div class="parallax-window" data-parallax="scroll" data-speed="0.6" data-image-src="assets/img1.png"></div>
+                <div class="content">
+                    <h2>Piece - 049</h2>
+                    <p>Designed for sir Arthur James</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="parallax-window" data-parallax="scroll" data-speed="0.6"  data-image-src="assets/img2.png"></div>
+                <div class="content">
+                    <h2>Piece - 049</h2>
+                    <p>Designed for sir Arthur James</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="parallax-window" data-parallax="scroll" data-speed="0.6"  data-image-src="assets/img3.png"></div>
+                <div class="content">
+                    <h2>Piece - 049</h2>
+                    <p>Designed for sir Arthur James</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="parallax-window" data-parallax="scroll"  data-image-src="assets/img4.png"></div>
+                <div class="content">
+                    <h2>Piece - 049</h2>
+                    <p>Designed for sir Arthur James</p>
+                </div>
+            </div>
+
+
+            <h1 class="">
+                SAMUEL <br/>FURNITURE
+            </h1>
+            
+        </div>
+        
+    </main>
+    <section class="subsection">
+        <h2>Collectoin <br>101</h2>
+        <span class="linkicon">
+            <img  width="75" src="assets/icons/link.svg" alt="link to collections">
+        </span>
+    </section>
+    <footer class="footer">
+        <div class="about">
+            <h2>Samuel<br/> FURNITURE, 2023 &#169;</h2>
+        </div>
+        <ul class="navlinks">
+            <li class="navlink">
+                <a href="#">Contact</a>
+            </li>
+            <li class="navlink">
+                <a href="#">Collection</a>
+            </li>
+            <li class="navlink">
+                <a href="#">About</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <script>
+        let lastX = 0; 
+        let lastY = 0;
+        document.body.onmousemove = function(e) {
+        document.getElementById("cursor").style.setProperty (
+            '--x', (
+            e.clientX - 10
+            )
+            + 'px'
+        );
+        document.documentElement.style.setProperty (
+            '--y', (
+            e.clientY - 10
+            ) 
+            + 'px'
+        );
+
+        lastX = e.clientX;
+        }
+
+
+        // const cursor = document.getElementById("cursor");
+        // const text = document.querySelectorAll("h1,h2,h3,h4,p,a,li,span")
+        
+        // text.forEach((el) => {
+        //     el.addEventListener("mouseenter", () => {
+        //         cursor.classList.add("active");
+        //     });
+        //     // el.addEventListener("mouseleave", () => {
+        //     //     cursor.classList.remove("active");
+        //     // });
+        // });
+
+    </script>
+</body>
+</html>
