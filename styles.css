@@ -1,0 +1,255 @@
+@font-face {
+    font-family: mersad;
+    src: url("./assets/fonts/Mersad Regular.ttf")
+}
+@font-face {
+    font-family: mersadsemi;
+    src: url("./assets/fonts/Mersad SemiBold.ttf");
+    font-weight: 600;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    background-color: white;
+    font-family: mersad;
+    padding-right: 50px;
+    padding-left: 50px;
+    /* cursor: none; */
+}
+
+.app {
+    width: 100%
+    /* max-width: 100vw;
+    min-width: 100vw; */
+}
+
+#navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    padding: 25px 0px;
+    border-bottom: 1px solid #BEBEBE;
+}
+#navbar .logo {
+    position: absolute;
+    left: 25px;
+    /* right: 5; */
+    
+}
+#navbar ul{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+li{ 
+    list-style: none;
+}
+.navlink {
+    color: #5C5C5C; 
+    font-family: mersadsemi;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+
+.navlink:after{ 
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #5C5C5C;
+    transition: ease-in-out 0.1s;
+}
+
+.navlink:hover::after{ 
+    width: 100%;
+}
+ a {
+    color: #5C5C5C ;
+    text-decoration: none;
+}
+
+
+.main {
+    min-width: 100%;
+    min-height: 260vh;
+    position: relative;
+    padding: 50px 0;
+}
+
+.main h1 {
+    font-size: 128px;
+}
+
+.main .image-container { 
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    /* object-fit: cover; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* img{ 
+    width: 436px; 
+    height: 480px;
+} */
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.image-container .content { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    gap: 5px;
+}
+
+
+.parallax-window:nth-child(1) {
+    width: 436px;
+    height: 504px;
+}
+
+.parallax-window:nth-child(2) {
+    width: 436px;
+    height: 480px;
+}
+
+.parallax-window:nth-child(3) {
+    width: 450px;
+    height: 600px;
+}
+
+.parallax-window:nth-child(4) {
+    width: 436px;
+    height: 504px;
+}
+
+.image-container:nth-child(1) {
+    top: 50px;
+    right: 0;
+    /* z-index: 10; */
+}
+.image-container:nth-child(2) {
+    top: 450px;
+    left: 100px;
+}
+.image-container:nth-child(3) {
+    top: 900px;
+    right: 150px;
+}
+.image-container:nth-child(4) {
+    top: 1300px;
+    left: 200px;
+}
+
+.image-container .content h2{
+    font-size: 16px;
+    color :#5C5C5C;
+    font-family: mersadsemi;
+    padding: 0;
+}
+
+/* collection */
+.subsection { 
+    display: grid;
+    width: 100%; 
+    place-content: center;
+    font-size: 54px;
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 150px;
+}
+
+.subsection span {
+    display: grid;
+    /* width: 100%;  */
+    place-content: center;
+}
+
+
+/* footer */
+footer {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+}
+footer > div {
+    width: 30%;
+}
+
+footer .navlinks{ 
+    flex-grow: 2;
+    display : flex; 
+    justify-content: space-between;
+    align-items: center;
+    cursor: none;
+}
+
+
+.dot {
+    position: fixed;
+    width: 10px ;
+    height: 10px; 
+    left: var(--x, -10);
+    top: var(--y, -10);
+    background-color: black;
+    border-radius: 50%;
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
+    z-index: 999;
+}
+
+.dot.active{ 
+    width: 30px;
+    height: 30px;
+    transform: scale(1.5);
+    background: transparent;
+    border: 2px solid black;
+    cursor: none;
+    transition: all linear 0.1s;
+}
+
+h1::selection,h2::selection,p::selection, *::selection  {
+    background: #c3c3c3;
+}
+
+br::selection, a::selection {
+    background: transparent;
+}
+
+.linkicon{ 
+    padding: 15px;
+    cursor: none;
+    scale: 0.5;
+    transition: all 0.2s ease-in-out;
+}
+.linkicon:hover{ 
+    scale: 1;
+    rotate: 45deg;
+}
+
+li,a {
+    cursor: none;
+}
