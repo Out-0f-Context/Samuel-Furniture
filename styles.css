@@ -8,6 +8,30 @@
     font-weight: 600;
 }
 
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #2b2d31;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1e1e1e;
+    border-radius: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e5e5e5;
+    cursor: grab;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -179,7 +203,7 @@ li{
     place-content: center;
     font-size: 54px;
     text-align: center;
-    margin-top: 75px;
+    padding-top: 125px;
     margin-bottom: 150px;
 }
 
