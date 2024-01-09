@@ -49,10 +49,12 @@ body {
 }
 
 .app {
-    width: 100%
-    /* max-width: 100vw;
-    min-width: 100vw; */
+    width: 100%;
 }
+
+
+
+
 
 #navbar {
     position: relative;
@@ -111,9 +113,10 @@ li{
 
 
 .main {
-    min-width: 100%;
-    min-height: 260vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
     padding: 50px 0;
 }
 
@@ -122,7 +125,7 @@ li{
 }
 
 .main .image-container { 
-    position: absolute;
+    /* position: absolute; */
     /* width: 100%;
     height: 100%; */
     /* object-fit: cover; */
@@ -151,50 +154,7 @@ li{
 }
 
 
-.parallax-window:nth-child(1) {
-    width: 436px;
-    height: 504px;
-}
 
-.parallax-window:nth-child(2) {
-    width: 436px;
-    height: 480px;
-}
-
-.parallax-window:nth-child(3) {
-    width: 450px;
-    height: 600px;
-}
-
-.parallax-window:nth-child(4) {
-    width: 436px;
-    height: 504px;
-}
-
-.image-container:nth-child(1) {
-    top: 50px;
-    right: 0;
-    /* z-index: 10; */
-}
-.image-container:nth-child(2) {
-    top: 450px;
-    left: 100px;
-}
-.image-container:nth-child(3) {
-    top: 900px;
-    right: 150px;
-}
-.image-container:nth-child(4) {
-    top: 1300px;
-    left: 200px;
-}
-
-.image-container .content h2{
-    font-size: 16px;
-    color :#5C5C5C;
-    font-family: mersadsemi;
-    padding: 0;
-}
 
 /* collection */
 .subsection { 
@@ -217,15 +177,18 @@ li{
 /* footer */
 footer {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     padding: 25px 0;
 }
-footer > div {
-    width: 30%;
-}
 
+footer > div{ 
+    width : 75%; 
+    margin: 0 auto;
+}
 footer .navlinks{ 
-    flex-grow: 2;
+    margin: 25px auto;
+    width: 100%;
     display : flex; 
     justify-content: space-between;
     align-items: center;
@@ -234,6 +197,7 @@ footer .navlinks{
 
 
 .dot {
+    display: none;
     position: fixed;
     width: 10px ;
     height: 10px; 
@@ -276,4 +240,150 @@ br::selection, a::selection {
 
 li,a {
     cursor: none;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 640px){ 
+    #navbar {
+        justify-content: end;
+        border-bottom: 1px solid #BEBEBE;
+    }
+    #navbar ul {
+        display: none;
+    }
+
+    .main h1{ 
+        font-size: 4rem;
+        text-align: center;
+    }
+    .parallax-window{ 
+        /* width: 100%; */
+        width: 350px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 640px ) and (max-width: 864px) {
+    .dot{ 
+        display: none;
+    }
+    #navbar {
+        justify-content: end;
+        border-bottom: 1px solid #BEBEBE;
+    }
+
+    #navbar ul {
+        width: 75%;
+        justify-content: space-evenly;
+    }
+    .main h1 {
+        font-size: 4.5rem;
+        text-align: left;
+    }
+
+    .main .image-container {
+        /* display: none; */
+        position: none;
+    }
+}
+
+
+
+@media screen and (min-width: 864px) { 
+    .dot{ 
+        display: block;
+    }
+    .main{ 
+        min-width: 100%;
+        display: block;
+        padding: 50px 0;
+        min-height: 260vh;
+        position: relative  ;
+    }
+    .main .image-container { 
+        position: absolute;
+        /* width: 100%;
+        height: 100%; */
+        /* object-fit: cover; */
+        /* display: flex;
+        flex-direction: column; */
+        /* gap: 15px; */
+    }
+    
+    
+    /* img{ 
+        width: 436px; 
+        height: 480px;
+    } */
+    
+    .parallax-window {
+        min-height: 400px;
+        background: transparent;
+    }
+    
+    .image-container .content { 
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        gap: 5px;
+    }
+    
+    
+    .parallax-window:nth-child(1) {
+        width: 436px;
+        height: 504px;
+    }
+    
+    .parallax-window:nth-child(2) {
+        width: 436px;
+        height: 480px;
+    }
+    
+    .parallax-window:nth-child(3) {
+        width: 450px;
+        height: 600px;
+    }
+    
+    .parallax-window:nth-child(4) {
+        width: 436px;
+        height: 504px;
+    }
+    
+
+
+    
+    .image-container:nth-child(2) {
+        top: 450px;
+        left: 100px;
+    }
+    .image-container:nth-child(3) {
+        top: 900px;
+        right: 150px;
+    }
+    .image-container:nth-child(4) {
+        top: 1300px;
+        left: 200px;
+    }
+    .image-container:nth-child(5) {
+        top: 50px;
+        right: 0px;
+    }
+    
+    .image-container .content h2{
+        font-size: 16px;
+        color :#5C5C5C;
+        font-family: mersadsemi;
+        padding: 0;
+    }
+    
+    .footer{ 
+        flex-direction: row;
+    }
+    
+    footer > div {
+        width: 30%;
+    }
 }
